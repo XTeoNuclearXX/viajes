@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import './LoginPage.css';
 
 export const Register = () => {
@@ -8,6 +8,10 @@ return(
        <h2>Registro</h2>
        <label htmlFor="username">Usuario</label>
        <input type="text" name="username" id="username" placeholder="Ingresa tu usuario" />
+
+       <label htmlFor="username">correo</label>
+       <input type="email" name="correo" id="username" placeholder="Ingresa tu correo" />
+       
        
        <label htmlFor="password">Contraseña</label>
        <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" />

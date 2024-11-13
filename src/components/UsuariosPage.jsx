@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./header";
 
-export const OtrasAventuras= () =>{
+export const UsuariosPage= () =>{
 
    return (
     <>

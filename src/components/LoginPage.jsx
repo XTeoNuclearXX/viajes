@@ -1,9 +1,10 @@
-import React from "react";
+import React , {useState}from "react";
 import './LoginPage.css';
 import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () =>{
-  const navigate = useNavigate()
+  const navigate = useNavigate( )
+  const [error, setError] = useState(false)
   const submit = async (event) =>{
     event.preventDefault()
     const correo = event.target.elements.correo.value
@@ -19,6 +20,10 @@ export const LoginPage = () =>{
     if (user){
       navigate('/landing')
 
+    }else{
+
+      setError(true)
+
     }
 
 
@@ -31,6 +36,7 @@ export const LoginPage = () =>{
    return (
      <form onSubmit={submit}className="login-form">
        <h2>Inicio de sesión</h2>
+       {error ? 'Las credenciales son incorrectas :(':null}
        <label htmlFor="username">Correo</label>
        <input type="email" name="correo" id="username" placeholder="Ingresa tu correo" />
        

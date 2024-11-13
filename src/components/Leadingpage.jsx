@@ -6,7 +6,7 @@ export const Leadinpage= () =>{
    return (
     <>
     <Header/>
-       <h2>Inicio de sesión</h2>
+       <h2></h2>
      </>
    );
  };
