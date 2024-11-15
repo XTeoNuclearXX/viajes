@@ -20,16 +20,33 @@ export const MisAventuras = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Manejador para la carga de archivos
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, foto: e.target.files[0] });
-  };
-
   // Manejador del envío del formulario
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos del formulario:", formData);
-    setSubmitted(true);
+    
+
+    try {
+      // Enviar los datos a la API
+      console.log(JSON.stringify(formData))
+      
+      const response = await fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: JSON.stringify(formData),
+      });
+      console.log(response)
+
+      // Verificar si la solicitud fue exitosa
+      if (response.ok) {
+        setSubmitted(true);  // Mostrar mensaje de éxito
+      } else {
+        console.error('Error al enviar los datos:', response.status);
+      }
+    } catch (error) {
+      console.error('Error al enviar los datos:', error);
+    }
   };
 
   return (
@@ -94,15 +111,15 @@ export const MisAventuras = () => {
 
             <label htmlFor="foto">Sube una Foto:</label>
             <input
-              type="file"
+              type="text"
               id="foto"
               name="foto"
-              accept="image/*"
-              onChange={handleFileChange}
+              placeholder="Ingresa url de imagen"
+              value={formData.foto}
+              onChange={handleChange}
               required
             />
             
-
             <button type="submit">Enviar</button>
           </form>
         )}
