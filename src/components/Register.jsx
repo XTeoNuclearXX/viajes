@@ -5,13 +5,13 @@ export const Register = () => {
   // Definir el estado para los campos del formulario
   const [formData, setFormData] = useState({
     username: '',
-    correo: '',
+    email: '',
     password: ''
   });
 
   const [message, setMessage] = useState('');
 
-
+  // Manejar cambios en los campos del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -22,6 +22,7 @@ export const Register = () => {
     e.preventDefault();
 
     try {
+      console.log(JSON.stringify(formData))
       const response = await fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/users', {
         method: 'POST',
         headers: {
@@ -29,10 +30,10 @@ export const Register = () => {
         },
         body: JSON.stringify(formData),
       });
-
+      console.log(response)
       if (response.ok) {
         setMessage('Registro exitoso');
-        setFormData({ username: '', correo: '', password: '' }); // Limpiar el formulario
+        setFormData({ username: '', email: '', password: '' }); // Limpiar el formulario
       } else {
         setMessage('Error al registrar usuario');
       }
@@ -58,13 +59,13 @@ export const Register = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor="correo">Correo</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
-          name="correo"
-          id="correo"
+          name="email"
+          id="email"
           placeholder="Ingresa tu correo"
-          value={formData.correo}
+          value={formData.email}
           onChange={handleChange}
         />
 
