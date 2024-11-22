@@ -1,4 +1,11 @@
 /* Estilos del formulario */
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .login-form {
     background-color: #ffffff;
     padding: 30px;

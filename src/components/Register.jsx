@@ -44,11 +44,11 @@ export const Register = () => {
   };
 
   return (
-    <>
+    <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Registro</h2>
         {message && <p>{message}</p>}
-        
+
         <label htmlFor="username">Usuario</label>
         <input
           type="text"
@@ -81,6 +81,6 @@ export const Register = () => {
 
         <button type="submit">Registrarse</button>
       </form>
-    </>
+    </div>
   );
 }

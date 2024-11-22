@@ -47,18 +47,20 @@ export const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={submit} className="login-form">
-      <h2>Inicio de sesión</h2>
-      {error && <p style={{ color: 'red' }}>Las credenciales son incorrectas :(</p>}
-      
-      <label htmlFor="correo">Correo</label>
-      <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo" required />
-      
-      <label htmlFor="password">Contraseña</label>
-      <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" required />
-      
-      <button type="submit">Iniciar sesión</button>
-      <button type="button" onClick={handleRegister}>Registrarse</button>
-    </form>
+    <div className="login-container">
+      <form onSubmit={submit} className="login-form">
+        <h2>Inicio de sesión</h2>
+        {error && <p style={{ color: 'red' }}>Las credenciales son incorrectas</p>}
+
+        <label htmlFor="correo">Correo</label>
+        <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo" required />
+
+        <label htmlFor="password">Contraseña</label>
+        <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" required />
+
+        <button type="submit">Iniciar sesión</button>
+        <button type="button" onClick={handleRegister}>Registrarse</button>
+      </form>
+    </div>
   );
 };

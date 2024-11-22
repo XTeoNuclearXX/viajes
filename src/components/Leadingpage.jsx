@@ -3,7 +3,6 @@ import Header from "./header";
 import "./Leadingpage.css";
 export const Leadinpage = () => {
 
-
   return (
     <>
       <Header />

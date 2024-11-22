@@ -26,11 +26,11 @@ fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs')
          <tbody>
             {locations && locations.map(location => {
             return <tr>
-                <td>{location.name}</td>
-                <td>{location.location}</td>
-                <td>{location.review}</td>
+                <td>{location.nombre}</td>
+                <td>{location.ubicacion}</td>
+                <td>{location.resena}</td>
                 <td>{location.rating}</td>
-                <td>{location.img}</td>
+                <td><img src={location.foto}/></td>
 
 
             </tr>

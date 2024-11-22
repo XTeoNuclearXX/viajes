@@ -10,8 +10,6 @@ import { UsuariosPage } from './components/UsuariosPage.jsx';
 function App() {
   return (
     <>
-    
-      
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
@@ -19,10 +17,7 @@ function App() {
         <Route path="/mis-aventuras" element={<MisAventuras/>} />
         <Route path="/otras-aventuras" element={<OtrasAventuras/>} />
         <Route path="/usuarios" element={<UsuariosPage/>} />
-
-
       </Routes>
-      
     </>
   );
 }
